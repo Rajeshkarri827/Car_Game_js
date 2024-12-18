@@ -1,0 +1,226 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  background: url(background.jpg) no-repeat center;
+  background-size: cover;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+#road {
+  background: url(road.png) repeat-y;
+  height: 1200vh;
+  width: 50vw;
+  position: relative;
+  top: -80vh;
+  z-index: -9;
+}
+
+#start {
+  position: absolute;
+  z-index: 100;
+  font-size: 2rem;
+  background-color: rgb(245, 99, 99);
+  color: white;
+  padding: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#score {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 2rem;
+  padding: 5px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+#enemycar1 {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  left: 310px;
+  z-index: 1001;
+}
+
+#enemycar2 {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  left: 100px;
+  z-index: 1001;
+}
+
+#enemycar3 {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  left: -100px;
+  z-index: 1001;
+}
+
+#enemycar4 {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  left: -300px;
+  top: -250px;
+  z-index: 1001;
+}
+
+.ecarimg {
+  width: 80px;
+}
+
+.mycarimg {
+  width: 80px;
+  /* height:60px; */
+}
+
+#mycar {
+  width: 80px;
+  height: 100px;
+  position: relative;
+  top: 15vh;
+  object-fit: contain;
+}
+
+@keyframes ecar1 {
+  0% {
+    top: -30vh;
+  }
+
+  100% {
+    top: 100vh;
+  }
+}
+
+@keyframes ecar2 {
+  0% {
+    top: -50vh;
+  }
+
+  100% {
+    top: 100vh;
+  }
+}
+
+@keyframes ecar3 {
+  0% {
+    top: -60vh;
+  }
+
+  100% {
+    top: 100vh;
+  }
+}
+
+@keyframes ecar4 {
+  0% {
+    top: -80vh;
+  }
+
+  100% {
+    top: 100vh;
+  }
+}
+
+@keyframes roadanimation {
+  0% {
+    top: -1100vh;
+  }
+
+  100% {
+    top: -200vh;
+  }
+}
+
+/* General Styles */
+@media screen and (max-width: 1200px) {
+  #road {
+    width: 60%; /* Slightly wider for medium-large screens */
+  }
+
+  #start,
+  #score {
+    font-size: 18px; /* Reduce font size for smaller screens */
+    padding: 8px;
+  }
+
+  #mycar,
+  #enemycar1,
+  #enemycar2,
+  #enemycar3,
+  #enemycar4 {
+    width: 12%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #road {
+    width: 70%;
+  }
+
+  #start,
+  #score {
+    font-size: 16px;
+    padding: 6px;
+  }
+
+  #mycar,
+  #enemycar1,
+  #enemycar2,
+  #enemycar3,
+  #enemycar4 {
+    width: 14%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #road {
+    width: 80%;
+  }
+
+  #start,
+  #score {
+    font-size: 14px;
+    padding: 4px;
+  }
+
+  #mycar,
+  #enemycar1,
+  #enemycar2,
+  #enemycar3,
+  #enemycar4 {
+    width: 16%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #road {
+    width: 90%;
+  }
+
+  #start,
+  #score {
+    font-size: 12px;
+    padding: 3px;
+  }
+
+  #mycar,
+  #enemycar1,
+  #enemycar2,
+  #enemycar3,
+  #enemycar4 {
+    width: 18%;
+  }
+}
