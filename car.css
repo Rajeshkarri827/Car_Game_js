@@ -38,11 +38,27 @@ body {
   position: absolute;
   top: 20px;
   left: 20px;
-  font-size: 2rem;
+  font-size: 20px;
+  font-weight: bold; 
   padding: 5px;
   background-color: white;
   border-radius: 20px;
+  z-index: 100
 }
+
+#highScore {
+  position: absolute;
+  top: 20px; 
+  right: 20px;
+  font-size: 20px; 
+  font-weight: bold; 
+  color: black; 
+  background-color:white; 
+  padding: 5px; 
+  border-radius: 20px; 
+  z-index: 100; 
+}
+
 
 #enemycar1 {
   position: relative;
@@ -93,7 +109,19 @@ body {
   top: 15vh;
   object-fit: contain;
 }
-
+#welcomeMessage {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: blue;
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 100;
+}
 @keyframes ecar1 {
   0% {
     top: -30vh;

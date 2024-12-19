@@ -46,9 +46,14 @@
 
 // document.body.appendChild(road);
 // document.body.appendChild(mycar);
+const playerName = localStorage.getItem('playerName');
 
+if (playerName) {
+    document.getElementById('welcomeMessage').innerText = `Welcome ${playerName}!`;
+}
 document.getElementById("start").addEventListener("click", function () {
   document.getElementById("start").style.display = "none";
+  document.getElementById("welcomeMessage").style.display = "none";
   document.getElementById("road").style.animation =
     "roadanimation 20s linear infinite";
 
@@ -99,7 +104,7 @@ document.getElementById("start").addEventListener("click", function () {
       horizontal += 20;
     }
 
-    document.getElementById("mycar").style.top = `${vertical}px`;
+    document.getElementById("mycar").style.top = `${vertical+110}px`;
     document.getElementById("mycar").style.left = `${horizontal}px`;
   });
 
@@ -108,7 +113,7 @@ document.getElementById("start").addEventListener("click", function () {
     document.getElementById("score").innerText = `Score : ${n}`;
     n = n + 3;
 
-    if(n>20){
+    if(n>200){
      var mycarimage= document.getElementById("mycar")
 
      mycarimage.innerHTML=`<img id="mycarimg" class="mycarimg" src="./upgrade1.png"alt="" width="100px" />`

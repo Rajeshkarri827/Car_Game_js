@@ -129,7 +129,6 @@
             <p>4. Have fun and try to achieve the highest score!</p>
         </div>
     </div>
-
     <script>
         function redirectToGame() {
             const playerName = document.getElementById('playerName').value;
@@ -137,10 +136,7 @@
                 alert('Please enter your name!');
                 return;
             }
-
-            localStorage.setItem('playerName', playerName);
-
-          
+            localStorage.setItem('playerName', playerName);          
             window.location.href = 'landed.html'; 
         }
     </script>
