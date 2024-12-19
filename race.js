@@ -59,6 +59,9 @@ document.getElementById("start").addEventListener("click", function () {
 
   fetchAndPlaySongs();
 
+  let highScore = localStorage.getItem("highScore") || 0;
+  document.getElementById("highScore").innerText = `High Score: ${highScore}`;
+
   setInterval(() => {
     num = Math.floor(Math.random() * (350 - 230 + 1) + 230);
     document.getElementById("enemycar1").style.left = `${num}px`;
@@ -112,7 +115,11 @@ document.getElementById("start").addEventListener("click", function () {
   setInterval(() => {
     document.getElementById("score").innerText = `Score : ${n}`;
     n = n + 3;
-
+    if (n > highScore) {
+      highScore = n ;
+      document.getElementById("highScore").innerText = `High Score: ${highScore}`;
+      localStorage.setItem("highScore", highScore); 
+    }
     if(n>200){
      var mycarimage= document.getElementById("mycar")
 
