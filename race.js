@@ -1,51 +1,4 @@
-// let ecars = document.createElement("div");
-// ecars.className = "ecars";
 
-// let enemy1 = document.createElement("div");
-// enemy1.className = "cars";
-// enemy1.id = "enemy1";
-// let enemy1Img = document.createElement("img");
-// enemy1Img.src = "./car2.png";
-// enemy1.appendChild(enemy1Img);
-// ecars.appendChild(enemy1);
-
-// let enemy2 = document.createElement("div");
-// enemy2.className = "cars";
-// enemy2.id = "enemy2";
-// let enemy2Img = document.createElement("img");
-// enemy2Img.src = "./car3.png";
-// enemy2.appendChild(enemy2Img);
-// ecars.appendChild(enemy2);
-
-// let enemy3 = document.createElement("div");
-// enemy3.className = "cars";
-// enemy3.id = "enemy3";
-// let enemy3Img = document.createElement("img");
-// enemy3Img.src = "./car2.png";
-// enemy3.appendChild(enemy3Img);
-// ecars.appendChild(enemy3);
-
-// let enemy4 = document.createElement("div");
-// enemy4.className = "cars";
-// enemy4.id = "enemy4";
-// let enemy4Img = document.createElement("img");
-// enemy4Img.src = "./car3.png";
-// enemy4.appendChild(enemy4Img);
-// ecars.appendChild(enemy4);
-
-// document.body.appendChild(ecars);
-
-// let road = document.createElement("div");
-// road.id = "road";
-// let roadImg = document.createElement("img");
-// roadImg.src = "./road.png"; // Set the road image
-// road.appendChild(roadImg);
-
-// let mycar = document.createElement("div");
-// mycar.id = "mycar";
-
-// document.body.appendChild(road);
-// document.body.appendChild(mycar);
 const playerName = localStorage.getItem('playerName');
 
 if (playerName) {
@@ -124,17 +77,12 @@ document.getElementById("start").addEventListener("click", function () {
      var mycarimage= document.getElementById("mycar")
 
      mycarimage.innerHTML=`<img id="mycarimg" class="mycarimg" src="./upgrade1.png"alt="" width="100px" />`
-      // mycarimage.src="./upgrade1.png"
-      // mycarimagestyle.width = "80px"; 
-      // mycarimagestyle.height = "100px"; 
-      // mycarimagestyle.boxShadow = "red"; 
-      // mycarimagestyle.border = "2px solid gold";
     }
 
-    // if(n>200){
-    //   var mycarimage= document.getElementById("mycar")
-    //   mycarimage.innerHTML=`<img id="mycarimg" class="mycarimg" src="./upgrade2.png"alt="" width="100px" />`
-    // }
+    if(n>400){
+      var mycarimage= document.getElementById("mycar")
+      mycarimage.innerHTML=`<img id="mycarimg" class="mycarimg" src="./upgrade2.png"alt="" width="100px" />`
+    }
 
 
     var ecar1_left = Math.abs(
@@ -205,13 +153,13 @@ document.getElementById("start").addEventListener("click", function () {
     if (
       mycar_left < 400 ||
       mycar_right > 1130 ||
-      mycar_top < 20 ||
-      mycar_bottom > 690
+      mycar_top < 20||
+      mycar_bottom > window.innerHeight
     ) {
       setTimeout(() => {
         alert(`GAME OVER!`);
       });
-      location.reload();
+      location.reload();  
     }
     if (
       ((ecar1_left < mycar_left && mycar_left < ecar1_right) ||
